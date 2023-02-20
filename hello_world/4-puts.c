@@ -1,8 +1,5 @@
 #include <stdio.h>
-/*
-         *print message using puts
-         *you ar not allowed to use printf
-         */
+
 
 int main(void)
 
