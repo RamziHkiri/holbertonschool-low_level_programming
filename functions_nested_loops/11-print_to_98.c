@@ -2,7 +2,8 @@
 #include "main.h"
 /**
  *print_to_98 - print all number from n to 98
- *Return: serie of numbers
+ *@n: tested number
+ * Return: serie of numbers
  */
 void print_to_98(int n)
 {
