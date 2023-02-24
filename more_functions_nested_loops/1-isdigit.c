@@ -1,7 +1,7 @@
 #include "main.h"
 #include<stdio.h>
 /**
- * _isupper - test if a char c is upper case or no
+ * _isdigit - test if a char c is upper case or no
  *@c: char
  * Return: 1  if c is upper 0 if not
  */
