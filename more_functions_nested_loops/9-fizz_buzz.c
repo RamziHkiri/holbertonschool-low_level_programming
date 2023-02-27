@@ -16,20 +16,22 @@ int main(void)
 		df = i % 5;
 		if (df == 0 && dt == 0)
 		{
-			printf("FizzBuzz ");
+			printf("FizzBuzz");
 		}
 		else if (df == 0)
 		{
-			printf("Buzz ");
+			printf("Buzz");
 		}
 		else if (dt == 0)
 		{
-			printf("Fizz ");
+			printf("Fizz");
 		}
 		else
 		{
-			printf("%d ", i);
+			printf("%d", i);
 		}
+		if(i < 100)
+			printf(" ");
 	}
 	printf("\n");
 
