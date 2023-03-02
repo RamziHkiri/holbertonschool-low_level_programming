@@ -13,12 +13,9 @@ void print_rev(char *s)
 	{
 		length++;
 	}
-
-	printf("%d \n ",length);
-
-	for (i = length - 1 ; i < 0 ;i--)
+	for (i = length - 1 ; i >= 0 ; i--)
 	{
-		printf("%c",s[i]);
+		_putchar(s[i]);
 	}
 	_putchar('\n');
 }
