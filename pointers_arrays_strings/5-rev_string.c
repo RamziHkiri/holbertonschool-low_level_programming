@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_rev - print string in reverse
+ * rev_string - print string in reverse
  * @s:string
  * Return: gnirts
  */
