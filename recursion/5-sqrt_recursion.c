@@ -1,18 +1,19 @@
 #include"main.h"
+#include<stdio.h>
 /**
- * _pow_recursion - x power of y
- * @x:integer
- * @y:integer
+ * _is_sqrt_of_n - verifie if i ^2 equal to n
+ * @n:integer
+ * @i:integer
  * Return: x^y
  */
-int _pow_recursion(int x, int y)
+int _is_sqrt_of_n(int n, int i)
 {
-	if (y < 0)
+	if (i * i == n)
+		return (i);
+	if (i == n)
 		return (-1);
-	if (y == 0)
-		return (1);
 	else
-		return (x * _pow_recursion(x, y - 1));
+		return (_is_sqrt_of_n(n, i + 1));
 }
 /**
  * _sqrt_recursion -natural square number
@@ -22,18 +23,15 @@ int _pow_recursion(int x, int y)
 
 int _sqrt_recursion(int n)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0 ; i <= n ; i++)
+	if (n < 0)
 	{
-		if (_pow_recursion(i, 2) == n)
-		{
-			return (i);
-		}
-		else if (_pow_recursion(i, 2) > n)
-		{
-			return (-1);
-		}
+		return (-1);
 	}
-	return (0);
+	else
+	{
+		return (_is_sqrt_of_n(n, i));
+	}
 }
+
