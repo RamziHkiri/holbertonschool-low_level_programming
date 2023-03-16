@@ -18,11 +18,9 @@ int main(int argc, char *argv[])
 	}
 	for (j = 1 ; j < argc ; j++)
 	{
-		if (isdigit(atoi(argv[j])) == 1)
+		if ((atoi(argv[j])))
 		{
 			sum += atoi(argv[j]);
-			printf("Error\n");
-			return (1);
 		}
 		else
 		{
