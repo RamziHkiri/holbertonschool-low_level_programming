@@ -26,6 +26,6 @@ char *_strdup(char *str)
 	{
 		res[j] = str[j];
 	}
-	res[i - 1] = '\0';
+	res[i] = '\0';
 	return (res);
 }
