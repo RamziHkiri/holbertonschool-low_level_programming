@@ -1,7 +1,8 @@
 #include<stdlib.h>
 #include<stdio.h>
+#include <ctype.h>
 /**
- * main -
+ * main - sum of arguments
  * @argc:arguments number
  * @argv: array of argumments
  * Return: 0
@@ -17,14 +18,16 @@ int main(int argc, char *argv[])
 	}
 	for (j = 1 ; j < argc ; j++)
 	{
-		if (!(atoi(argv[j])))
+		if (isdigit(atoi(argv[j])) == 1)
 		{
+			sum += atoi(argv[j]);
 			printf("Error\n");
 			return (1);
 		}
 		else
 		{
-			sum += atoi(argv[j]);
+			printf("Error\n");
+			return (1);
 		}
 	}
 	printf("%d\n", sum);
