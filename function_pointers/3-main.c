@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
-	if (op[1] != '\0' && num1 && num2 && !get_op_func(op)(num1, num2))
+	if (op[1] != '\0' && num1 && num2 && !get_op_func(op))
 	{
 		printf("Error\n");
 		exit(99);
