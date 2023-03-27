@@ -2,7 +2,9 @@
 #include<stdlib.h>
 #include"3-calc.h"
 /**
- * 
+ * get_op_func - get result between two antegers
+ * @s:char
+ * Return:integer
  */
 int (*get_op_func(char *s))(int, int)
 {
@@ -15,10 +17,11 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 	int i = 0;
-	while(ops[i].op != NULL )
+
+	while (ops[i].op != NULL)
 	{
 		if (*ops[i].op == *s)
-			return(ops[i].f);
+			return (ops[i].f);
 		i++;
 	}
 	return (NULL);
