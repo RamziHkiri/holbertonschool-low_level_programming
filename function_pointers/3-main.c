@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 	b = atoi(argv[3]);
 	op = argv[2];
 	res = get_op_func(op)(a,b);
-	return(res);
+	printf("%d\n",res);
+	return(0);
 
 }
