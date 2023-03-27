@@ -25,6 +25,11 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(100);
 	}
+	if (num1 && num2 && !get_op_func(op)(num1, num2))
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	res = get_op_func(op)(num1, num2);
 	printf("%d\n", res);
 	return (0);
