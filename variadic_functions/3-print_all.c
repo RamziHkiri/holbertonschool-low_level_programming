@@ -65,7 +65,7 @@ void print_f(va_list params)
  */
 void print_all(const char * const format, ...)
 {
-	int i, j;
+	int i = 0, j = 0;
 	va_list params;
 	print_t tpt[] = {
 		{"s", print_s},
@@ -75,22 +75,21 @@ void print_all(const char * const format, ...)
 	};
 
 	va_start(params, format);
-	for (i = 0 ; format[i] != '\0' ; i++)
+	while (format && (*(format + i)))
 	{
-		for (j = 0 ; j < 4 ; j++)
+		j = 0 ;
+		while( j < 4 && (*(format + i) != *(tpt[j].c)))
 		{
-			if (*(format + i) == *(tpt[j].c))
-			{
-				if (format[i + 1] != '\0')
-				{
-					tpt[j].print_func(params);
-					printf(", ");
-				}
-				else
-				{
-					tpt[j].print_func(params);
-				}
-			}
+			j++;
+		}
+		if (j < 3)
+		{
+			tpt[j].print_func(params);
+			printf(", ");
+		}
+		if (j == 3)
+		{
+			tpt[j].print_func(params);
 		}
 	}
 	printf("\n");
