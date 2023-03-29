@@ -12,14 +12,12 @@ void print_s(va_list params)
 	char *s;
 
 	s = va_arg(params, char *);
-	if (s)
-	{
-	printf("%s", s);
-	}
-	else
+	if (!s)
 	{
 		printf("Error");
+		return;
 	}
+	printf("%s", s);
 }
 /**
  * print_c -print character
@@ -66,6 +64,7 @@ void print_f(va_list params)
 void print_all(const char * const format, ...)
 {
 	int i = 0, j = 0;
+	char *sep = "";
 	va_list params;
 	print_t tpt[] = {
 		{"s", print_s},
@@ -82,15 +81,13 @@ void print_all(const char * const format, ...)
 		{
 			j++;
 		}
-		if (j < 3)
+		if (j < 4)
 		{
+			printf("%s", sep);
 			tpt[j].print_func(params);
-			printf(", ");
+			sep = ", ";
 		}
-		if (j == 3)
-		{
-			tpt[j].print_func(params);
-		}
+		i++;
 	}
 	printf("\n");
 	va_end(params);
