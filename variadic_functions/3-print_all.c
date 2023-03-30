@@ -14,7 +14,7 @@ void print_s(va_list params)
 	s = va_arg(params, char *);
 	if (!s)
 	{
-		printf("Error");
+		printf("(nil)");
 		return;
 	}
 	printf("%s", s);
@@ -63,13 +63,13 @@ void print_f(va_list params)
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, j = 0;
+	int i = 0, j;
 	char *sep = "";
 	va_list params;
 	print_t tpt[] = {
 		{"s", print_s},
 		{"c", print_c},
-		{"d", print_d},
+		{"i", print_d},
 		{"f", print_f}
 	};
 
