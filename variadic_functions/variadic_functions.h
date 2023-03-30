@@ -4,10 +4,15 @@ int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char * const format, ...);
+#include<stdarg.h>
+/**
+ * print - data struct
+ * @c:char
+ * @print_func: function pointers
+ */
 typedef struct print
-#include <stdarg.h>
 {
 	char *c;
 	void (*print_func)(va_list params);
-}print_t;
+} print_t;
 #endif
