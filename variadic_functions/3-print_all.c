@@ -76,8 +76,8 @@ void print_all(const char * const format, ...)
 	va_start(params, format);
 	while (format && (*(format + i)))
 	{
-		j = 0 ;
-		while( j < 4 && (*(format + i) != *(tpt[j].c)))
+		j = 0;
+		while (j < 4 && (*(format + i) != *(tpt[j].c)))
 		{
 			j++;
 		}
