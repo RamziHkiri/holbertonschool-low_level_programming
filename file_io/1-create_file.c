@@ -19,6 +19,7 @@ int create_file(const char *filename, char *text_content)
 
 if (!filename)
 	return (-1);
+
 if (text_content != NULL)
 {
 	for (i = 0 ; text_content[i] ; i++)
@@ -26,7 +27,7 @@ if (text_content != NULL)
 }
 o = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 w = write(o, text_content, i);
-if (o < 0 || w < 0)
+if (o < 0)
 {
 	close(o);
 	return (-1);
