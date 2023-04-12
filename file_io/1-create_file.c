@@ -24,7 +24,7 @@ if (text_content != NULL)
 	for (i = 0 ; text_content[i] ; i++)
 		;
 }
-o = open(filename, O_CREAT | O_RDWR, 0600);
+o = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
 w = write(o, text_content, i);
 if (o < 0 || w < 0)
 {
